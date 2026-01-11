@@ -1,0 +1,200 @@
+🤖 AI Guru – SLM-Powered Quiz Generation System
+
+AI Guru is a local AI-powered educational platform that generates and delivers Data Structures & Algorithms (DSA) multiple-choice questions using a Small Language Model (SLM) combined with dataset-based retrieval.
+The system is designed for offline execution, data privacy, and fast response time, making it ideal for academic and low-resource environments.
+
+🚀 Project Overview
+
+Traditional AI learning platforms rely on cloud-based Large Language Models (LLMs), which introduce challenges such as high cost, latency, and privacy concerns.
+AI Guru addresses these issues by leveraging a locally deployed Small Language Model (TinyLlama-1.1B) integrated with a Retrieval-Augmented Generation (RAG) approach.
+
+The application is built using Streamlit and allows users to:
+
+Select difficulty level and topic
+
+Fetch pre-stored questions from a dataset
+
+Generate new AI-based quiz questions dynamically
+
+View correct answers with explanations
+
+🧠 Key Features
+
+✅ Local AI inference (No API / No Internet required)
+
+✅ Small Language Model (TinyLlama-1.1B)
+
+✅ Retrieval-Augmented Generation (RAG)
+
+✅ Difficulty-wise and topic-wise question generation
+
+✅ CPU & GPU auto-detection
+
+✅ Clean and interactive UI using Streamlit
+
+✅ Educational & privacy-friendly architecture
+
+🏗️ System Architecture
+User Interface (Streamlit)
+        |
+        v
+Difficulty & Topic Selection
+        |
+        v
++---------------------------+
+| Question Source Decision |
++---------------------------+
+   |                    |
+   v                    v
+CSV Dataset         Local SLM (TinyLlama)
+   |                    |
+   |             RAG Prompt Construction
+   |                    |
+   +----------> Final MCQ Output
+
+⚙️ How the Project Works
+1️⃣ User Interaction
+
+User logs into the system
+
+Selects difficulty level (Easy / Medium / Hard)
+
+Selects a DSA topic
+
+2️⃣ Dataset-Based Retrieval
+
+The system loads a structured CSV dataset containing:
+
+Questions
+
+Difficulty levels
+
+Topics
+
+Correct answers
+
+Explanations
+
+A random question can be fetched directly from the dataset for practice.
+
+3️⃣ Retrieval-Augmented Generation (RAG)
+
+When the user chooses “Generate New AI Question”:
+
+A relevant example question is retrieved from the dataset
+
+This example is added as context to the prompt
+
+The prompt is passed to the local SLM
+
+This improves:
+
+Accuracy
+
+Topic relevance
+
+Question quality
+
+4️⃣ Small Language Model (SLM) Inference
+
+Model Used: TinyLlama/TinyLlama-1.1B-Chat
+
+Runs locally on:
+
+GPU (if available)
+
+CPU (fallback mode)
+
+Uses Hugging Face transformers pipeline
+
+Generates:
+
+New question
+
+4 options
+
+Correct answer
+
+Short explanation
+
+5️⃣ Output Parsing & Display
+
+The AI output is parsed into structured fields
+
+Displayed cleanly in the UI
+
+Answer and explanation are hidden under an expandable section
+
+🧩 Technologies Used
+Component	Technology
+Frontend	Streamlit
+Backend	Python
+AI Model	TinyLlama-1.1B (SLM)
+ML Framework	Hugging Face Transformers
+Hardware Support	CPU / CUDA GPU
+Data Storage	CSV
+Optimization	Caching & Device Auto-Detection
+🆚 Why Small Language Model (SLM)?
+Aspect	SLM	LLM
+Deployment	Local	Cloud
+Cost	Free	Expensive
+Latency	Low	High
+Privacy	High	Low
+Hardware	Low-end friendly	High-end required
+
+This makes SLMs ideal for academic projects and private AI systems.
+
+📂 Project Structure
+AI-Guru/
+│
+├── app.py                         # Main Streamlit application
+├── ai_guru_unique_dsa_with_difficulty.csv
+├── requirements.txt
+├── README.md
+
+▶️ How to Run the Project
+1️⃣ Install Dependencies
+pip install -r requirements.txt
+
+2️⃣ Run the Application
+streamlit run app.py
+
+🔮 Future Enhancements
+
+User performance tracking
+
+More advanced RAG using vector databases
+
+Multi-language question generation
+
+Admin panel for dataset management
+
+Fine-tuned SLM for DSA domain
+
+🎓 Academic Use Case
+
+This project demonstrates:
+
+Practical use of SLMs
+
+AI system design without cloud dependency
+
+Integration of NLP + software engineering
+
+Real-world application of RAG architecture
+
+It is well-suited for:
+
+Final year projects
+
+AI/ML coursework
+
+Educational platforms
+
+Research demonstrations
+
+👨‍💻 Author
+
+Niraj Zambare
+B.Tech – AI & Blockchain
+GH Raisoni Institute of Engineering and Business Management, Jalgaon
